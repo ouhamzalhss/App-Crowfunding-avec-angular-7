@@ -1,0 +1,67 @@
+.grid_3{width: 22.9%;}
+.grid_4{width: 31.2%;}
+.grid_6{width: 47.9%;}
+.grid_8{width: 64.5%;}
+.grid_9{width: 72.9%;}
+.header-content .header-right{
+    width: 420px;
+}
+#header .top-message .icon{
+    vertical-align: 3px;
+}
+.form .txt{
+    width: 200px;
+}
+.form-search .btn-search{
+    top:11px;
+}
+.form-search .btn-reset-keyword .icon{
+    top:3px;
+}
+.form .row-item .btn{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.sml-thumb .project-location .iLocation{
+    vertical-align: 1px;
+}
+#footer .form-email .txt{
+    width: 200px;
+}
+#footer .form-email .btn-green{
+    border: none;
+}
+
+.list-project-in-category .list-project > .grid_3{
+    width: 31.2%;
+}
+.list-project-in-category .list-project{
+    margin: 0;
+}
+.comment-item .btn-reply .iReply{
+    vertical-align: 2px;
+    margin-right: 3px;
+}
+.box-post-comment .fill-width.txt{
+    width: 235px;
+}
+.box-post-comment textarea.txt{
+    height: 86px;
+}
+.box-post-comment .btn-submit-comment{
+
+    padding-top: 6px;
+    padding-bottom: 10px;
+}
+.ver_hold {
+    width:0;
+    height:100%;
+    display:inline-block;
+    vertical-align:middle;
+}
+.container {
+    width:100%;
+    text-align:center;
+    display:inline-block;
+    vertical-align:middle;
+}

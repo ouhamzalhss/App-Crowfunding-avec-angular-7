@@ -1,0 +1,20 @@
+
+.search-sec{
+    height: 100px !important;
+  margin-top: 30px !important;
+  padding: 30px 80px;
+  background-color: #cccccc;
+}
+.home-feature-category{
+    border: #cccccc solid 2px;
+}
+.w-100{
+    height: 650px;
+}
+.col-lg-3{
+  padding: 10px !important;
+}
+.container-fluid{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}

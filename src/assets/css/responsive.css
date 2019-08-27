@@ -1,0 +1,481 @@
+
+@media screen and (max-device-width:  979px), screen and (max-width:  979px) {
+    .container_12{width: 98%;}
+    .layout-1cols-ceneter{width: 98%;}
+
+    .clear-2col{
+        display: block;
+    }
+    .layout-2cols{
+        width: 100%;
+    }
+    /* Header
+    ****************************************/
+    #header .header-content{
+        padding: 12px 0 22px;
+    }
+    #header .wrap-top-menu{
+        padding: 7px 0;
+    }
+    #header .top-menu{
+        margin-top: 2px;
+    }
+    #header .top-message{
+        display: none;
+    }
+    #header .wrap-top-menu .iBtnRed{
+        display: block;
+    }
+    .header-content .header-right{
+        width: 100%;
+        border-bottom: 1px solid #d4d4d4;
+        padding-bottom: 12px;
+        display: none;
+    }
+    .header-content .header-right.active{
+        display: block;
+    }
+    .header-content .header-left{
+        width: 100%;
+        padding-top: 10px;
+    }
+    #header .dropdown-search-result{
+        top:97px;
+    }
+    .dropdown-search-result .iPickUp{
+        display: none;
+    }
+    /* Home */
+    .home-feature-category .wrap-lst-category{
+        height: 422px;
+    }
+    .box-marked-project.project-short .top-project-info{
+        height: 278px;
+    }
+    .box-marked-project .content-info-short .thumb-img{
+        margin-right: 20px;
+    }
+    .box-marked-project .content-info-short .wrap-short-detail{
+        float: none;
+        width: auto;
+    }
+    .box-marked-project .content-info-short .comment-view{
+        position: static;
+    }
+
+    .home-popular-project .clear-2col{display: none}
+
+    .project-short.sml-thumb .group-fee .fee-item{
+        float: none;
+        width: auto;
+        border-top: 1px dashed #d4d4d4;
+        padding: 5px 10px;
+    }
+    .project-short.sml-thumb .group-fee .fee-item:first-child{
+        padding-left: 10px;
+    }
+
+    .project-short.larger .bottom-project-info{
+        padding-bottom: 20px;
+    }
+    .project-short.larger .project-progress{
+        float: none;
+        margin: 10px auto;
+    }
+    .project-short.larger .group-fee{
+        padding: 0 0 0 20px;
+    }
+    .project-short.larger .bottom-project-info .btn-buck-project{
+        margin: 0 20px 0 0;
+    }
+
+
+    .home-discover-friends .row-friends.row-connect-fb .thumb-avatar.t-first,
+    .home-discover-friends .row-friends.row-connect-fb .thumb-avatar.t-last{
+        display: none;
+    }
+    .home-discover-friends .connect-fb{
+        width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+    }
+
+    .project-author .author-action{
+        text-align: center;
+    }
+    .project-author .author-action .btn{
+        margin: 10px 0 0 0;
+    }
+    .project-author .author-action .btn:first-child{
+        margin-top: 0;
+    }
+    .form-profile{
+        width: auto;
+    }
+    .form .row-item .lbl{
+        width: 90px;
+    }
+    .form .row-item .val{
+        margin-left: 100px;
+    }
+    .form.form-profile .txt{
+        width: 215px;
+    }
+    .form .txt.fill-width{
+        width: 100%;
+    }
+
+    /*SelectNav.js*/
+    .selectnav{
+        display: block;
+    }
+    .nav-menu-blog{
+        display: none;
+    }
+
+    /* Footer */
+    #footer .main-footer .grid_3{
+        width: 48%;
+    }
+    #footer .footer-menu > ul{
+        float: left;
+        width: 50%;
+    }
+    #footer .footer-menu > ul:first-child{
+        width: 50%;
+    }
+    #footer .site-copyright{
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-device-width:  767px), screen and (max-width:  767px) {
+
+    .layout-2cols .content,
+    .layout-2cols .sidebar{
+        width: 98%;
+        margin-bottom: 30px;
+    }
+    .layout-1cols-ceneter .content{
+        width: 81.333%;
+    }
+    .dropdown-search-result .grid_3{
+        width: 48%;
+    }
+    .home-feature-category .left-lst-category,
+    .home-feature-category .marked-category{
+        width: 98%;
+    }
+    .home-feature-category .wrap-lst-category,
+    .box-marked-project.project-short .top-project-info{
+        height: auto;
+    }
+	#home-slider .slide-title,
+	.slide-description, .slide-description2 {
+		padding-bottom: 12px
+	}
+    .box-marked-project .content-info-short .thumb-img{
+        margin-right: 0;
+    }
+    .box-marked-project .content-info-short .wrap-short-detail{
+        float: right;
+        width: 43.36283185840708%;
+    }
+    .box-marked-project .content-info-short .comment-view{
+        position: absolute;
+    }
+    .project-short.box-marked-project .group-fee{
+        padding: 25px 20px 0 0;
+        float: right;
+    }
+    .project-short.big-thumb .group-fee{
+        padding-left: 25px;
+    }
+    .project-short.larger .group-fee .sep{
+        margin: 12px 20px 0 20px;
+    }
+
+
+    .lst-popular-project {
+        padding-bottom: 20px;
+    }
+    .lst-popular-project > .grid_3{
+        width: 48%;
+    }
+    .lst-popular-project .project-short{
+        margin-bottom: 20px;
+    }
+
+    .home-discover-friends .connect-fb{
+        text-align: center;
+        padding-top: 20px;
+    }
+    .home-discover-friends .connect-fb .description{
+        float: none;
+        width: auto;
+        padding: 0 0 10px 0;
+    }
+    .home-discover-friends .connect-fb .btn-fb{
+        float: none;
+        margin: 0;
+    }
+
+    .additional-info-line .grid_9,
+    .additional-info-line .grid_3{
+        width: 98%;
+        text-align: left;
+    }
+    .project-author .author-action{
+        text-align: left;
+    }
+    .how-it-work .left-intro{
+        float: none;
+        width: auto;
+        margin-bottom: 20px;
+    }
+    .how-it-work .right-intro{
+        float: none;
+        width: auto;
+        padding: 4px;
+    }
+
+    .popup-common{
+        position: absolute;
+        height: auto;
+    }
+    .popup-common .prefix_1{
+        padding: 0;
+    }
+    .login-form .box-white{
+        height: auto;
+    }
+    .popup-common .grid_6,
+    .popup-common .grid_4{
+        width: 81.333%;
+        padding-left: 8.333%;
+    }
+
+
+}
+@media screen and (max-device-width:  480px), screen and (max-width:  480px) {
+    #logo{
+        float: none;
+        width: auto;
+        padding: 0 0 20px 0;
+        text-align: center;
+    }
+    #header .top-menu .nav-horizontal{
+        display: none;
+    }
+    #header .top-menu .btn-toogle-menu{
+        display: block;
+    }
+    #header .wrap-top-menu .iBtnRed{
+        margin-top: 6px;
+    }
+    #header .main-nav{
+        margin: 0 auto;
+        float: none;
+        width: 215px;
+    }
+    #header .account-panel{
+        margin: 0 0 10px 0;
+        float: none;
+        text-align: center;
+    }
+    #header .account-panel .btn{
+        float: none;
+    }
+    #header .form-search{
+        float: none;
+        width: 220px;
+        margin: 0 auto;
+    }
+	#home-slider .slide-title,
+	.slide-description, .slide-description2 {
+		padding-bottom: 8px
+	}
+    .dropdown-search-result .grid_3{
+        width: 98%;
+    }
+    .dropdown-search-result .iBigX{
+        top: 15px;
+    }
+    .marked-category .title-mark{
+        padding-bottom: 5px;
+    }
+    .marked-category .count-project{
+        position: static;
+    }
+    .box-marked-project .content-info-short .thumb-img,
+    .project-short.larger .content-info-short .thumb-img,
+    .day-news .project-short .content-info-short .thumb-img{
+        float: none;
+        width: auto;
+        margin-bottom: 10px;
+    }
+    .box-marked-project .content-info-short .wrap-short-detail,
+    .project-short.larger .content-info-short .wrap-short-detail,
+    .day-news  .project-short .content-info-short .wrap-short-detail{
+         float: none;
+         width: auto;
+    }
+    .box-marked-project .content-info-short .comment-view,
+    .project-short.larger .content-info-short .comment-view,
+    .day-news  .project-short .content-info-short .comment-view{
+        position: static;
+    }
+    .project-short.box-marked-project .group-fee .fee-item,
+    .project-short.larger .group-fee .fee-item,
+    .project-short.big-thumb .group-fee .fee-item{
+        float: none;
+        width: auto;
+        border-top: 1px dashed #d4d4d4;
+        padding: 5px 10px;
+    }
+    .project-short.box-marked-project .group-fee .fee-item:first-child,
+    .project-short.larger .group-fee .fee-item:first-child,
+    .project-short.big-thumb .group-fee .fee-item:first-child{
+        padding-left: 10px;
+    }
+    .project-short.box-marked-project .group-fee .sep,
+    .project-short.larger .group-fee .sep,
+    .project-short.big-thumb .group-fee .sep{
+        display: none;
+    }
+    .project-short .bottom-project-info{
+        overflow: hidden;
+    }
+    .project-short.box-marked-project .group-fee,
+    .project-short.larger .group-fee,
+    .project-short.big-thumb .group-fee{
+        padding: 15px 0 10px 0;
+    }
+    .project-short .group-fee .sep{
+        margin: 12px 24px 0 24px;
+    }
+    .project-short .project-progress{
+        margin: 10px auto;
+        float: none;
+    }
+    .project-short.box-marked-project .group-fee,
+    .project-short.larger .group-fee,
+    .project-short.big-thumb .group-fee{
+        padding: 15px 0 10px 0;
+        float: none;
+        clear: both;
+        width: 96%;
+        margin: 0 auto;
+    }
+    .project-short.larger .bottom-project-info .btn-buck-project{
+        float: left;
+        margin: 0 0 0 20px;
+    }
+    .project-tab-detail .nav-tabs{
+        display: none;
+    }
+    .project-detail .tab-content .alternate-tab{
+        display: block;
+    }
+    .project-detail .tab-content .tab-pane{
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+    }
+    .project-detail .tab-content .alternate-tab.active{
+        display: block;
+    }
+    .how-it-work .grid_6.box-text-content,
+    .how-it-work .grid_4.box-text-content{
+        width: 98%;
+    }
+
+    .form .row-item .lbl{
+        display: block;
+        float: none;
+        width: auto;
+        text-align: left;
+        padding-bottom: 7px;
+    }
+    .form .row-item .val{
+        margin-left: 0;
+    }
+    .form.form-profile .txt{
+        width: 100%;
+    }
+    .form .row-item .btn{
+        margin-left: 0;
+        margin-top: 4px;
+    }
+
+    .blog-page .grp-info-box .box-text-content{
+        float: none;
+        width: auto;
+        padding-bottom: 20px;
+    }
+    .blog-page .grp-info-box .box-text-content:first-child{
+        margin-left: 0;
+    }
+    .blog-page .box-text-content .wrap-info{
+        padding: 0;
+    }
+
+    .list-project-in-category .list-project > .grid_3{
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .box-post-comment .left-input,
+    .box-post-comment .right-input{
+        float: none;
+        width: auto;
+    }
+    .thanks{
+        float: none;
+        width: auto;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .thanks .pick-right{
+        border-color: #3c84ea transparent transparent transparent;
+        top: 100%;
+        right: 22px;
+    }
+    .box-post-comment .btn-submit-comment{
+        width: 100px;
+    }
+
+
+    .lst-popular-project > .grid_3,
+    #footer .main-footer .grid_3{
+        width: 98%;
+    }
+    #footer .copyright{
+        text-align: center;
+    }
+    #footer .logo-footer{
+        position: static;
+    }
+    #footer .term-privacy{
+        position: static;
+        padding: 20px 0;
+    }
+    #footer .site-copyright{
+        padding: 0;
+    }
+
+    .popup-common .grid_6,
+    .popup-common .grid_4{
+        width: 98%;
+        padding-left: 0;
+    }
+
+    .centered-btns_nav{
+        top: 65%;
+    }
+}
+
+@media screen and (max-device-width:  320px), screen and (max-width:  320px) {
+}
+

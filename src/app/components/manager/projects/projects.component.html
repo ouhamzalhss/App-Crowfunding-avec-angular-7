@@ -1,0 +1,73 @@
+<div class="content container my-5">
+  <div class="project-detail">
+    <div class="project-tab-detail tabbable accordion">
+      <ul class="nav nav-tabs side_nav" role="tablist">
+        <li *ngFor="let wallet of coinwallet; let first = first;" [ngClass]="{firstItem: first}" role="presentation" class="accounts_li" [class.active]="selectedwallet===wallet">
+          <a (click)="selectedwallet = wallet" aria-controls="one" role="tab" data-toggle="tab">{{wallet}}</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div *ngIf="selectedwallet === coinwallet[0]" role="tabpanel" class="tab-pane active" id="one">
+          <div>  <!-- tab Projects-->
+            <h3 class="rs alternate-tab accordion-label">Profile</h3>
+            <div class="tab-pane accordion-content active">
+              <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+
+              <div class="container my-3">
+                <h3> Liste of projects </h3>
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>PLEDGED</th>
+                    <th>Poucentage</th>
+                    <th>IsCloture</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <!--   for (Todo todo: todos) {  -->
+                  <tr *ngFor="let projet of projects._embedded.projects">
+                    <td>{{projet.nomProjet}}</td>
+                    <td>{{projet.dateDebut | date | uppercase}}</td>
+                    <td>{{projet.fondsApportes}} MAD</td>
+                    <td>{{projet.pourcentage | number }}%</td>
+                    <td *ngIf="projet.isCloture || projet.pourcentage == 100">Clotured</td>
+                    <td *ngIf="!projet.isCloture && projet.pourcentage != 100">25j</td>
+
+
+                    <td><button (click)="updateProjet(projet.id)" class="btn btn-success">Update</button></td>
+                    <td><button (click)="deleteProjet(projet.id)" class="btn btn-warning">Delete</button></td>
+                  </tr>
+                  <!-- } -->
+                  </tbody>
+
+                </table>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div><!--end: .tab-pane -->
+        <div *ngIf="selectedwallet === coinwallet[1]" role="tabpanel" class="tab-pane active" id="two">
+          <!--.tab users -->
+
+          <div class="box-marked-project project-short inside-tab">
+
+          </div><!--end: .box-marked-project -->
+          <!--end: .tab-pane -->
+
+
+        </div>
+      </div>
+    </div><!--end: .project-tab-detail -->
+  </div>
+</div><!--end: .content -->
+
+
+
+
+

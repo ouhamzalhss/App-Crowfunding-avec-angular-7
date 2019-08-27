@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/css/style.css'; 
+@import './assets/css/normalize.css'; 
+@import './assets/css/jquery.sidr.light.css'; 
+@import './assets/css/animate.min.css'; 
+@import './assets/css/md-slider.css'; 
+@import './assets/css/responsive.css';
+
+ 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#toast-container{ top: 90% !important;}

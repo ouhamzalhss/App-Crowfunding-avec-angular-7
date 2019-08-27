@@ -1,0 +1,171 @@
+<div class="layout-2cols">
+  <div class="content grid_8">
+    <div class="project-detail">
+      <div class="project-tab-detail tabbable accordion">
+        <ul class="nav nav-tabs side_nav" role="tablist">
+          <li *ngFor="let wallet of coinwallet; let first = first;" [ngClass]="{firstItem: first}" role="presentation" class="accounts_li clickable" [class.active]="selectedwallet===wallet">
+            <a (click)="selectedwallet = wallet" aria-controls="one" role="tab" data-toggle="tab">{{wallet}}</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div *ngIf="selectedwallet === coinwallet[0]" role="tabpanel" class="tab-pane active" id="one">
+            <div>  <!-- tab aacount-->
+              <h3 class="rs alternate-tab accordion-label">Profile</h3>
+              <div class="tab-pane accordion-content active">
+                <div class="form form-profile">
+                  <form (ngSubmit)="!profileForm.invalid && saveProfile()" #profileForm="ngForm">
+                    <div class="row-item clearfix">
+                      <label class="lbl" for="firstName">Name:</label>
+                      <div class="val">
+                        <input class="txt" type="text" id="firstName" name="firstName" [(ngModel)]="person.firstName">
+                        <input class="txt" type="text" id="lastName" name="lastName" [(ngModel)]="person.lastName">
+                      </div>
+                    </div>
+                    <div class="row-item clearfix">
+                    <label class="lbl" for="txt_location">Email:</label>
+                    <div class="val">
+                      <input class="txt" type="text" id="txt_location" name="email" [(ngModel)]="person.email">
+                    </div>
+                  </div>
+                    <div class="row-item clearfix">
+                      <label class="lbl" for="txt_time_zone">Location:</label>
+                      <div class="val">
+                        <input class="txt" type="text" id="txt_time_zone" name="location" [(ngModel)]="person.location">
+                      </div>
+                    </div>
+
+                    <div class="row-item clearfix">
+                      <label class="lbl" for="txt_web">Web:</label>
+                      <div class="val">
+                        <input class="txt txt-website" type="text" id="txt_web" name="site" [(ngModel)]="person.site">
+                      </div>
+                    </div>
+
+                    <div class="row-item clearfix">
+                      <label class="lbl" for="txt_location">CIN:</label>
+                      <div class="val">
+                        <input class="txt" type="text" id="txt_cin" name="cin" [(ngModel)]="person.cin">
+                      </div>
+                    </div>
+
+                    <div class="row-item clearfix">
+                      <label class="lbl" for="txt_location">Tel:</label>
+                      <div class="val">
+                        <input class="txt" type="text" id="txt_tel" name="tele" [(ngModel)]="person.tele">
+                      </div>
+                    </div>
+
+                    <div class="row-item clearfix">
+                      <label class="lbl" for="txt_location">Function:</label>
+                      <div class="val">
+                        <input class="txt txt-website" type="text" id="txt_funct" name="fonction" [(ngModel)]="person.fonction">
+                      </div>
+                    </div>
+
+                    <p class="wrap-btn-submit rs ta-r">
+                      <button class="btn btn-danger btn-submit-all">Save all settings</button>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div><!--end: .tab-pane -->
+          <div *ngIf="selectedwallet === coinwallet[1]" role="tabpanel" class="tab-pane active" id="two">
+            <!--.tab projects -->
+
+            <div class="box-marked-project project-short inside-tab" *ngFor="let contrib of contributions._embedded.contributions" >
+              <div *ngIf="contrib.typePersonne=='E' ">
+              <div class="top-project-info" >
+                <div class="content-info-short clearfix">
+                  <a href="#" class="thumb-img">
+                    <img src="../../assets/images/ex/th-292x204-3.jpg" alt="$TITLE">
+                  </a>
+                  <div class="wrap-short-detail">
+                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="#">{{contrib.getprojet.nomProjet}}</a></h3>
+                    <p class="rs tiny-desc">by <a href="#" class="fw-b fc-gray be-fc-orange">{{contrib.getpersonne.firstName+' '+contrib.getpersonne.lastName}}</a> in <span class="fw-b fc-gray">{{contrib.getprojet.getAdresse.adresse}}</span></p>
+                    <p class="rs title-description">
+                      {{displayDesc(contrib.getprojet.descriptionProjet)}}
+                    </p>
+                  </div>
+                  <p class="rs clearfix comment-view">
+                    <a href="#" class="fc-gray be-fc-orange">75 comments</a>
+                    <span class="sep">|</span>
+                    <a href="#" class="fc-gray be-fc-orange">378 views</a>
+                  </p>
+                </div>
+              </div><!--end: .top-project-info -->
+              <div class="bottom-project-info clearfix">
+                <div class="project-progress sys_circle_progress" data-percent="69">
+                  <div class="sys_holder_sector">{{contrib.getprojet.pourcentage | number:'2.0-2' }}%</div>
+                </div>
+                <div class="group-fee clearfix">
+                  <div class="fee-item">
+                    <p class="rs lbl">Global</p>
+                    <span class="val">{{contrib.getprojet.fondsApportes + contrib.getprojet.fondsALever }}</span>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="fee-item">
+                    <p class="rs lbl">collected</p>
+                    <span class="val">{{contrib.getprojet.montantInvestissemnt}}MAD</span>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="fee-item">
+                    <p class="rs lbl">Days Left</p>
+                    <span class="val">25</span>
+                  </div>
+                </div>
+                <div class="clear"></div>
+              </div>
+
+
+            </div><!--end: .box-marked-project -->
+            <!--end: .tab-pane -->
+          </div>
+        </div>
+        </div>
+
+      </div><!--end: .project-tab-detail -->
+    </div>
+  </div><!--end: .content -->
+  <div class="sidebar grid_4">
+    <div class="box-gray project-author">
+      <h3 class="title-box">Project by</h3>
+      <div class="media">
+        <a href="#" class="thumb-left" *ngIf="person.imageUrl">
+          <img src="{{this.host+'/photoUser/'+person.username+'?ts='+getTs()}}" alt="$USER_NAME"/>
+        </a>
+        <a href="#" class="thumb-left" *ngIf="!person.imageUrl">
+          <img src="../../assets/images/user.jpg" alt="$USER_NAME"/>
+        </a>
+        <div class="media-body">
+          <h6 class="rs pb10"><a href="#" class="be-fc-orange fw-b">{{person.firstName +' '+ person.lastName}}</a></h6>
+          <p class="rs">{{person.location}}</p>
+          <p class="rs fc-gray">5 projects</p>
+        </div>
+      </div>
+      <div class="author-action">
+        <a class="btn btn-danger white" (click)="AuthentService.logout()">Logout</a>
+        <a class="btn btn-success white" (click)="onEditPhoto()">Edit image</a>
+      </div>
+
+
+      <div class="row mt-1" *ngIf="editPhoto">
+        <div class="col-md-6">
+          <input type="file" (change)="onSelectFile($event)">
+        </div>
+        <div class="col-md-6">
+
+          <button class="btn btn-success btn-sm float-right" [disabled]="!disableButtonUpload" (click)="uploadPhoto()">Upload</button>
+        </div>
+
+        <div class="col-md-10 progress mt-2">
+          <div class="progress-bar" role="progressbar" aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100" [style.width]="progress + '%'" >
+            {{progress}}%
+          </div>
+        </div>
+      </div>
+
+    </div><!--end: .project-author -->
+  </div><!--end: .sidebar -->
+  <div class="clear"></div>
+</div>

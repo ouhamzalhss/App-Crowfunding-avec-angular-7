@@ -1,0 +1,214 @@
+
+    <header id="header">
+        <div class="wrap-top-menu">
+            <div class="container_12 clearfix">
+                <div class="grid_12">
+                    <nav class="top-menu">
+                        <ul id="main-menu" class="nav nav-horizontal clearfix">
+                            <li class="active"><a routerLink="/">Home</a></li>
+                            <li class="sep"></li>
+                            <!-- <li><a href="all-pages.html">All Pages</a></li> -->
+                            <li class="sep"></li>
+                            <li><a routerLink="help">Help</a></li>
+                            <li class="sep"></li>
+                            <li><a routerLink="contact">Contact</a></li>
+                        </ul>
+                        <a id="btn-toogle-menu" class="btn-toogle-menu" href="#alternate-menu">
+                            <span class="line-bar"></span>
+                            <span class="line-bar"></span>
+                            <span class="line-bar"></span>
+                        </a>
+                        <div id="right-menu">
+                            <ul class="alternate-menu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="all-pages.html">All Pages</a></li>
+                                <li><a href="how-it-work.html">Help</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="top-message clearfix">
+                        <i class="icon iFolder"></i>
+                        <span class="txt-message">Nulla egestas nulla ac diam ultricies id viverra nisi adipiscing.</span>
+                        <i class="icon iX"></i>
+                        <div class="clear"></div>
+                    </div>
+                    <i id="sys_btn_toggle_search" class="icon iBtnRed make-right"></i>
+                </div>
+            </div>
+        </div><!-- end: .wrap-top-menu -->
+        <div class="container_12 clearfix">
+            <div class="grid_12 header-content">
+                <div id="sys_header_right" class="header-right">
+                    <div class="account-panel" *ngIf="!authService.isUserLoggedIn()">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#myRegisterModal" (click)="showRegisterModal()">Register</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#myLoginModal" (click)="showLoginModal()">Login</button>
+                    </div>
+                  <div class="account-panel" *ngIf="authService.isUserLoggedIn()">
+                    <button class="btn btn-danger" (click)="authService.logout()">Logout</button>
+                    <button class="btn btn-primary" routerLink="profile">{{person.firstName+" "+person.lastName}}
+                      <img *ngIf="person.imageUrl" src="{{this.host+'/photoUser/'+person.username}}" height="25" width="25" alt="Avatar" style="border-radius: 50%;" class="avatar">
+                      <img *ngIf="!person.imageUrl" src="../../assets/images/user.jpg" height="25" width="25" alt="Avatar" style="border-radius: 50%;" class="avatar">
+                    </button>
+                    <a class="btn btn-default" routerLink="manager/projects" *ngIf="authService.isAdmin()">Manage</a>
+                  </div>
+
+                  <div class="form-search">
+                        <form action="#">
+                            <label for="sys_txt_keyword">
+                                <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search projects"/>
+                            </label>
+                            <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
+                            <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <h1 id="logo">
+                        <a routerLink="/"><img src="../../assets/images/logo1.png" alt="$SITE_NAME"/></a>
+                    </h1>
+                    <div class="main-nav clearfix">
+                        <div class="nav-item">
+                            <a routerLink="all-projects" class="nav-title">Discover</a>
+                            <p class="rs nav-description">Great Projects</p>
+                        </div>
+                        <span class="sep"></span>
+                        <div class="nav-item">
+                            <a routerLink="new-project" *ngIf="authService.isUserLoggedIn()" class="nav-title clickable">Start</a>
+                            <a (click)="showToaster()" *ngIf="!authService.isUserLoggedIn()" class="nav-title clickable">Start</a>
+                            <p class="rs nav-description">Create Project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><!--end: #header -->
+
+ <!-- The Register Modal -->
+ <div class="modal fade" id="myRegisterModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Register</h4>
+          <button type="button" class="close" (click)="hideRegisterModal()">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="alert alert-warning" *ngIf="registerForm.dirty && registerForm.invalid">Enter valid values</div>
+          <div class="alert alert-danger" *ngIf="messageError">{{messageError}}</div>
+
+            <form (ngSubmit)="!registerForm.invalid && onRegister()" #registerForm="ngForm">
+                    <h4 class="rs title-box">New to our platforme?</h4>
+                    <p class="rs">Account is required to continue.</p>
+                    <div class="form-action">
+
+                        <div class="wrap-2col clearfix">
+                          <div class="form-group">
+                            <label>Username</label>
+
+                          <input type="text" #username="ngModel"
+                                 [(ngModel)]="user.username" class="form-control"
+                                 name="username" required="required" minlength="3">
+                          </div>
+
+                          <div class="form-group">
+                          <label>Password</label>
+                          <input type="password" #username="ngModel"
+                                 [(ngModel)]="user.password" class="form-control"
+                                 name="password" required="required" minlength="3">
+                        </div>
+                          <div class="form-group">
+                            <label>Retype Password</label>
+                            <input type="password" #confirme="ngModel"
+                                   [(ngModel)]="user.confirme" class="form-control"
+                                   name="confirme" required="required" minlength="3">
+                          </div>
+
+                          <div class="form-group">
+                            <label>FirstName</label>
+                            <input type="text" #firstName="ngModel"
+                                   [(ngModel)]="user.firstName" class="form-control"
+                                   name="firstName">
+                          </div>
+                          <div class="form-group">
+                            <label>LastName</label>
+                            <input type="text" #lastName="ngModel"
+                                   [(ngModel)]="user.lastName" class="form-control"
+                                   name="lastName" >
+                          </div>
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" #email="ngModel"
+                                   [(ngModel)]="user.email" class="form-control"
+                                   name="email" >
+                          </div>
+
+                          <button class="btn btn-success btn-block mr-2" type="submit">Save</button>
+
+                        </div>
+                   
+                    </div>
+            </form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#myLoginModal" (click)="showLoginModal()">Login</button>
+          <button type="button" class="btn btn-danger" (click)="hideRegisterModal()">Close</button>
+          <!-- this button is hidden, used to close from typescript -->
+          <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- The LOgin Modal -->
+<div class="modal fade" id="myLoginModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Authentication</h4>
+              <button type="button" class="close" (click)="hideLoginModal()">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <form id="" #f="ngForm" (ngSubmit)="onLogin(f.value)">
+            <div class="modal-body">
+              <div class="alert alert-danger" *ngIf="mode==1">
+                Bad credentials
+              </div>
+
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" ngModel="" required class="form-control" name="username" />
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" ngModel="" required class="form-control" name="password" />
+                </div>
+                <button class="btn btn-success btn-block mr-2" type="submit">Login</button>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-toggle="modal" data-target="#myRegisterModal" (click)="showRegisterModal()">Register</button>
+              <button type="button" class="btn btn-danger" (click)="hideLoginModal()">Close</button>
+              <!-- this button is hidden, used to close from typescript -->
+              <button type="button" id="close-modal2" data-dismiss="modal" style="display: none">Close</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
+

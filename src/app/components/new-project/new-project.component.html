@@ -1,0 +1,150 @@
+<div class="container my-5">
+  <h3>Form to add new project</h3>
+  <div class="alert alert-warning" *ngIf="projectForm.dirty && projectForm.invalid">Enter valid values</div>
+  <div class="alert alert-warning" *ngIf="projectForm.dirty && dateDebut.invalid">Enter valid Target Date</div>
+  <div class="alert alert-warning" *ngIf="projectForm.dirty && nomProjet.invalid">Enter atleast 5 characters in Description</div>
+
+  <form (ngSubmit)="!projectForm.invalid && saveProject()" #projectForm="ngForm">
+
+    <div class="row">
+      <div class="col">
+        <fieldset class="form-group">
+          <label>project Name</label>
+          <input type="text" #nomProjet="ngModel"
+                 [(ngModel)]="project.nomProjet" class="form-control"
+                 name="nomProjet" required="required" minlength="5">
+        </fieldset>
+      </div>
+      <div class="col">
+        <fieldset class="form-group">
+          <label>start Date</label>
+          <input type="date" #dateDebut="ngModel"
+                 [ngModel]="project.dateDebut | date:'yyyy-MM-dd' "
+                 (ngModelChange)="project.dateDebut = $event"
+                 class="form-control" name="dateDebut" required="required" >
+        </fieldset>
+      </div>
+    </div>
+
+
+    <fieldset class="form-group">
+      <label>Description</label>
+      <textarea #descriptionProjet="ngModel"
+             [(ngModel)]="project.descriptionProjet" class="form-control"
+                name="descriptionProjet" required="required" minlength="5"></textarea>
+    </fieldset>
+
+
+
+    <div class="row">
+      <div class="col">
+        <fieldset class="form-group">
+          <label>Delai</label>
+          <input type="text" #delaiProjet="ngModel"
+                 [(ngModel)]="project.delaiProjet" class="form-control"
+                 name="delaiProjet" required="required">
+        </fieldset>
+      </div>
+      <div class="col">
+        <fieldset class="form-group">
+          <label>Fonds</label>
+          <input type="text" #fondsApportes="ngModel"
+                 [(ngModel)]="project.fondsApportes" class="form-control"
+                 name="fondsApportes" required="required">
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <fieldset class="form-group">
+          <label>fondsALever</label>
+          <input type="text" #fondsALever="ngModel"
+                 [(ngModel)]="project.fondsALever" class="form-control"
+                 name="fondsALever" required="required">
+        </fieldset>
+      </div>
+      <div class="col">
+        <fieldset class="form-group">
+          <label>isCloture</label>
+          <input type="text" #isCloture="ngModel"
+                 [(ngModel)]="project.isCloture" class="form-control"
+                 name="isCloture" required="required">
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <fieldset class="form-group">
+          <label>natureProjet</label>
+          <input type="text" #natureProjet="ngModel"
+                 [(ngModel)]="project.natureProjet" class="form-control"
+                 name="natureProjet" required="required">
+        </fieldset>
+      </div>
+      <div class="col">
+        <fieldset class="form-group">
+          <label>typeProjets</label>
+          <select [(ngModel)]="project.typeProjets" name="typeProjets" class="form-control" >
+            <option value="{{type.id}}" *ngFor="let type of typesProjects._embedded.typesProjects">
+              {{type.type}}
+            </option>
+          </select>
+          </fieldset>
+      </div>
+    </div>
+    <div class="row">
+      <h3>Adresse informations</h3>
+    </div>
+    <div class="row">
+      <div class="col">
+        <fieldset class="form-group">
+          <label>Adresse</label>
+          <input type="text" #adr="ngModel"
+                 [(ngModel)]="adresse.adresse" class="form-control"
+                 name="adresse" required="required">
+        </fieldset>
+      </div>
+        <div class="col">
+          <fieldset class="form-group">
+            <label>Pays</label>
+            <select [(ngModel)]="adresse.pays" name="pays" class="form-control" >
+              <option value="Maroc">Maroc</option>
+              <option value="France">France</option>
+              <option value="Canada">Canada</option>
+            </select>
+          </fieldset>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col">
+              <fieldset class="form-group">
+                <label>Région</label>
+                 <select [(ngModel)]="adresse.region" name="region" class="form-control" >
+                  <option value="Khenifra BM">Khenifra BM</option>
+                  <option value="Rabat kenitra">Rabat kenitra</option>
+                </select>
+              </fieldset>
+            </div>
+            <div class="col">
+              <fieldset class="form-group">
+                <label>Commune</label>
+
+                <select [(ngModel)]="adresse.commun" name="commun" class="form-control" >
+                  <option value="Oulad ayad">Oulad ayad</option>
+                  <option value="Rabat hassan">Rabat hassan</option>
+                </select>
+              </fieldset>
+            </div>
+          </div>
+
+
+    <div class="row">
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-success btn-block">Save</button>
+      </div>
+    </div>
+
+  </form>
+</div>
